@@ -30,3 +30,27 @@ document.getElementById('numbers').innerHTML = random_numbers;
 setTimeout(function () {
     document.getElementById('numbers').innerHTML = '';
 },5000);
+
+// setTimeout in cui andiamo a permettere l'utente di inserire ed a mostrare il risultato
+setTimeout(function () {
+    //creo un array vuoto per i numeri inseriti dall'utnete
+    let user_numbers = [];
+
+    //eseguo un ciclo di 5 ripetizioni in cui vado a mostrare ad ogni iterazione il prompt di inserimento
+    for (let i = 0; i < 5; i++){
+        //permettere all'utente di inserire i suoi numeri
+        user_numbers.push(parseInt(prompt('Inserisci il tuo numero')));
+    }
+
+    //array di numeri individuati
+    let guessed = [];
+    //controllare che i numeri inseriti dall'utnete siano presenti nell'array dei numeri casuali
+    for (let i = 0; i < 5; i++){
+        if (random_numbers.includes(user_numbers[i])) {
+            guessed.push(user_numbers[i]);
+        }
+    }
+
+    //mostro i numeri indovinati nella pagina
+    document.getElementById('numbers').innerHTML = `Hai indovinato ${guessed.length} numeri. Sono i seguenti ${guessed}`;
+}, 6000)
