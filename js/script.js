@@ -18,4 +18,11 @@ function createArrayNumbers() {
             numbers.push(num);
         }
     }
+
+    return numbers;
 }
+
+// assegno ad una variabile il valore restituito dalla funzione createArrayNumbers
+let random_numbers = createArrayNumbers();
+document.getElementById('numbers').innerHTML = random_numbers;
+
