@@ -26,3 +26,7 @@ function createArrayNumbers() {
 let random_numbers = createArrayNumbers();
 document.getElementById('numbers').innerHTML = random_numbers;
 
+//setTimeout che si occupa di svuotare la lista
+setTimeout(function () {
+    document.getElementById('numbers').innerHTML = '';
+},5000);
